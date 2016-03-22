@@ -29,3 +29,12 @@
 ## File-based project format:
 *.ipr
 *.iws
+
+
+/**/*.js.html
+*.sln
+*.DotSettings.user
+coverage
+node_modules
+build
+dist
