@@ -29,7 +29,3 @@
 ## File-based project format:
 *.ipr
 *.iws
-
-#git rm -r /.idea
-#git commit -m "Remove /.idea folder"
-#git push -u origin master
