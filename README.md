@@ -1,8 +1,6 @@
 # property-cross
 property-cross (test project)
 
-пока только перенес структуру из  angular1-5-webpack-oclazyload-sample
-
 npm install -g node-gyp
 npm install -g gulp
 npm install -g bower
