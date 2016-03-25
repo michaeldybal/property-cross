@@ -88,7 +88,6 @@ function searchController($state, $scope, api) {
             });
         }
     }
-
 }
 
 module.exports = searchController;

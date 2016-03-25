@@ -1,10 +1,8 @@
 
-module.exports = angular.module('app.states.phone', [
-        require('./search/phones.module.js').name
+module.exports = angular.module('app.states.phones', [
+        require('./search/search-phones.module.js').name,
+        require('./article/article.module.js').name
     ])
-
-// not worked. need fixes
- /*
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
             .state('phones', {
@@ -19,4 +17,4 @@ module.exports = angular.module('app.states.phone', [
             })
         }
     ])
-*/
+

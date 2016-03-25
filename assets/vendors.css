@@ -3,6 +3,8 @@
 /* temp styles */
 .panel-content {
     padding: 30px;
+    height: 500px;
+    overflow: scroll;
 }
 
 .form-control {
@@ -17,7 +19,14 @@
     border: 1px solid #ccc;
     margin: 10px;
 }
+
 .img-responsive {
     border:1px solid #ccc;
     margin: 0 auto;
 }
+
+.search-phones {
+    height: 600px;
+    overflow: scroll;
+}
+

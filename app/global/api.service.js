@@ -24,6 +24,9 @@ function apiService($http, $q, $timeout) {
         { id: 3, title: 'Article 3', text: 'Article 3 text' }
     ];
 
+    self.getPhones = function() {
+        return $http.get('app/phone-catalog.json')
+    }
 
     self.getArticles = function(){
         return self.fake(articles)
