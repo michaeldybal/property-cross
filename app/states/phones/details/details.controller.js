@@ -1,11 +1,11 @@
-require('./article.less');
+require('./details.less');
 
 var config = require('app.config'),
     _ = require('underscore');
 
-articleController.$inject = ['$scope', 'api', '$stateParams'];
+detailsController.$inject = ['$scope', 'api', '$stateParams'];
 
-function articleController($scope, api, $stateParams) {
+function detailsController($scope, api, $stateParams) {
 
     var self = this;
 
@@ -16,4 +16,4 @@ function articleController($scope, api, $stateParams) {
 
 }
 
-module.exports = articleController;
+module.exports = detailsController;

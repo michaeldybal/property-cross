@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = angular.module('app.phones.search-phones', [])
+module.exports = angular.module('app.states.phones.search-phones', [])
     .config(['$stateProvider', function($stateProvider){
         $stateProvider.state('phones.search-phones', {
             url: '/search-phones',

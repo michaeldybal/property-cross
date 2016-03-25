@@ -1,7 +1,7 @@
 
 module.exports = angular.module('app.states.phones', [
-        require('./search/search-phones.module.js').name,
-        require('./article/article.module.js').name
+        require('./search-phones/search-phones.module.js').name,
+        require('./details/details.module.js').name
     ])
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
