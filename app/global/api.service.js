@@ -1,7 +1,7 @@
 var config = require('app.config'),
     _ = require('underscore');
 
-apiService.$inject = ['$http', '$q', '$timeout'];
+apiService.$inject = ['$http', '$q', '$timeout', '$httpParamSerializer'];
 function apiService($http, $q, $timeout) {
     var self = this;
 
@@ -16,8 +16,6 @@ function apiService($http, $q, $timeout) {
         return deffered.promise;
     };
 
-
-
     var articles = [
         { id: 1, title: 'Article 1', text: 'Article 1 text' },
         { id: 2, title: 'Article 2', text: 'Article 2 text' },
@@ -27,6 +25,15 @@ function apiService($http, $q, $timeout) {
     self.getPhones = function() {
         return $http.get('app/phone-catalog.json')
     }
+
+    self.getFlats = function () {
+        var data = $http({
+            url: 'http://api.nestoria.co.uk/api?callback=JSON_CALLBACK&country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy&page=1&place_name=leeds',
+            method: "JSONP",
+            responseType: "json"
+        });
+        return data;
+    };
 
     self.getArticles = function(){
         return self.fake(articles)

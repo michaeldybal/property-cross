@@ -14,6 +14,7 @@ function navbarController($rootScope, notificationService, $state, $scope) {
     self.openNews = function(){
         self.openItem = 'news';
     };
+
     self.openImport = function(){
         self.openItem = null;
     };
