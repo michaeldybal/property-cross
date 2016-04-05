@@ -1,0 +1,39 @@
+<div class="panel-content">
+
+    <div class="row">
+        <h2>Search Results Page</h2>
+        <div ng-if="ctrl.flats.listings.length>0">
+            <div class="row" ng-repeat="flat in ctrl.flats.listings">
+                <div class="matches">
+                    <div class="col-xs-2">
+                        <div class="img-responsive" >
+                            <img ng-src={{flat.thumb_url}} alt="{{ctrl.phone.name}}" class="img-responsive"/>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-10">
+                        <p><b>{{flat.price_formatted}}</b></p>
+                        <p>{{flat.title}}</p>
+                        <p>{{flat.summary}}</p>
+                        <a ui-sref="cross.details({id:flat.guid})">Подробнее..</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="!ctrl.flats.listings">
+            <h3>Not found</h3>
+        </div>
+
+        <div ng-if="ctrl.flats.locations.length>0">
+            <h3>Please, select a location below</h3>
+            <div class="row" ng-repeat="flat in ctrl.flats.locations">
+                <div class="col-xs-10">
+                    <a ui-sref="cross.results({id:flat.place_name})">{{flat.long_title}}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

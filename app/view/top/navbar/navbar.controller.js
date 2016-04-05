@@ -23,6 +23,10 @@ function navbarController($rootScope, notificationService, $state, $scope) {
         return $state.includes('news') || self.openItem == 'news';
     };
 
+    self.crossesActive = function() {
+        return $state.includes('crosses') || self.openItem == 'crosses';
+    };
+
     self.onGlassClick = function(){
         self.openItem = null;
     };

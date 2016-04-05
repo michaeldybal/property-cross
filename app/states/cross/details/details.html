@@ -1,0 +1,21 @@
+<div class="panel-content">
+    <div class="row">
+
+         <div class="col-xs-4">
+             <div class="img-responsive" >
+                 <img ng-src={{ctrl.flats.listings[0].img_url}} alt="{{ctrl.phone.name}}" class="img-responsive"/>
+             </div>
+         </div>
+
+         <div class="col-xs-8">
+             <h2><b>Price: {{ctrl.flats.listings[0].price_formatted}}</b></h2>
+             <h4><b>Title:</b> {{ctrl.flats.listings[0].title}}</h4>
+             <h4><b>Summary:</b>{{ctrl.flats.listings[0].summary}}</h4>
+             <h4><b>Updated:</b>{{ctrl.flats.listings[0].updated_in_days_formatted}}</h4>
+             <h4><b>Bedrooms:</b>{{ctrl.flats.listings[0].bedroom_number}}</h4>
+             <h4><b>thumb height:</b>{{ctrl.flats.listings[0].thumb_height}}</h4>
+         </div>
+
+    </div>
+
+</div>

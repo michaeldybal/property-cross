@@ -1,14 +1,14 @@
 require('./search-flats.less');
 
-flatsController.$inject = ['api'];
-function flatsController(api) {
+flatsController.$inject = ['$location','api'];
+function flatsController($location,api) {
     var self = this;
 
-    api.getFlats().then(function(data){
-        self.flats = data.data.response.listings;
-    })
+    self.saves = api.savesSearchFlats;
+
+    self.clickGoButton = function () {
+
+        $location.path('/cross/results/'+self.text);
+    };
 }
-
 module.exports = flatsController;
-
-

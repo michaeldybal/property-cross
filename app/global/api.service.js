@@ -22,18 +22,25 @@ function apiService($http, $q, $timeout) {
         { id: 3, title: 'Article 3', text: 'Article 3 text' }
     ];
 
+    self.savesSearchFlats = [
+        {text: 'Chelsea', count: 1142},
+        {text: 'leeds', count: 1480},
+        {text: 'asdasdasd', count: 0},
+    ];
+
     self.getPhones = function() {
         return $http.get('app/phone-catalog.json')
     }
 
-    self.getFlats = function () {
+    self.getFlats = function (params) {
         var data = $http({
-            url: 'http://api.nestoria.co.uk/api?callback=JSON_CALLBACK&country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy&page=1&place_name=leeds',
+            url: 'http://api.nestoria.co.uk/api?callback=JSON_CALLBACK&country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy&page=1'+params,
             method: "JSONP",
             responseType: "json"
         });
         return data;
     };
+
 
     self.getArticles = function(){
         return self.fake(articles)
