@@ -34,7 +34,7 @@ function apiService($http, $q, $timeout) {
 
     self.getFlats = function (params) {
         var data = $http({
-            url: 'http://api.nestoria.co.uk/api?callback=JSON_CALLBACK&country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy&page=1'+params,
+            url: 'http://api.nestoria.co.uk/api?callback=JSON_CALLBACK&country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy'+params,
             method: "JSONP",
             responseType: "json"
         });

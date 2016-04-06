@@ -7,7 +7,6 @@ function flatsController($location,api) {
     self.saves = api.savesSearchFlats;
 
     self.clickGoButton = function () {
-
         $location.path('/cross/results/'+self.text);
     };
 }
