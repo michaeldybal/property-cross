@@ -2,7 +2,7 @@ module.exports = angular.module('app.states.cross.details', [])
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
             .state('cross.details', {
-                url: '/details/{id:[0-9,a-z,-_—=]+}',
+                url: '/details/{guid:[0-9,a-z,-_—=]+}',
                 views: {
                     'container@': {
                         template: require('./details.html'),

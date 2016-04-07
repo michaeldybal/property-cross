@@ -1,0 +1,23 @@
+<div class="panel-body quick-search">
+    <div class="quick-search-content" ng-click="$ctrl.preventClose = true">
+        <div class="input-wrapper">
+            <div class="input-group">
+
+                <input id="quick-search-text"
+                       ng-model="$ctrl.form.query"
+                       ng-keyup="$ctrl.onKeyUp($event)"
+                       ng-keydown="$ctrl.onKeyDown($event)"
+                       type="text"
+                       class="form-control"
+                       placeholder="Search flats.."
+                       onfocus="placeholder = ''"
+                       onblur="placeholder = 'Search articles'">
+
+                <button id="quick-search-start" class="btn btn-default" ng-click="$ctrl.search()">Search</button>
+
+                <span id="clear-quick-search-text" class="clear-input-btn fa fa-times" ng-click="$ctrl.queryClear()"></span>
+            </div>
+        </div>
+
+    </div>
+</div>

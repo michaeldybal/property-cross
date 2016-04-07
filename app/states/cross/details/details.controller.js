@@ -8,13 +8,10 @@ detailsController.$inject = ['$scope', 'api', '$stateParams'];
 function detailsController($scope, api, $stateParams) {
     var self = this;
 
-    self.text=$stateParams.id;
+    self.text=$stateParams.guid;
 
     api.getFlats('&guid='+self.text).then(function(data){
         var countFlats = data.data.response.total_results || 0;
-
-        api.savesSearchFlats.push({text: self.text, count: countFlats});
-
         self.flats = data.data.response;
     });
 

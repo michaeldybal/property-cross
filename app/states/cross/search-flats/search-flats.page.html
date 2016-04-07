@@ -1,5 +1,7 @@
 <div class="search-flats" ng-controller="FlatsController as ctrl">
 
+
+
     <div class="panel-content">
 
         <div class="row">
@@ -11,19 +13,12 @@
         </div>
 
         <div class="row">
-
-        </div>
-
-        <div class="row">
-            <h4>Use the form below to search for houses to buy. You can search by place-name, postcode,
+            <h4>Use the form below to search for houses to buy.
+                You can search by place-name, postcode,
                 or click 'My location', to search in your current location.</h4>
-            <div class="col-xs-10">
-                <input type="text" class="form-control" id="usr" placeholder="newcastle" ng-model="ctrl.text">
-            </div>
 
-            <div class="col-xs-2">
-                <button type="button" class="btn btn-success" ng-click="ctrl.clickGoButton()" >Go</button>
-            </div>
+            <searchflats></searchflats>
+
         </div>
 
         <div class="row">
@@ -32,7 +27,7 @@
                 <div class="row" ng-repeat="save in ctrl.saves">
                     <div class="col-md-12">
                         <div class="list-group">
-                            <a ui-sref="cross.results({id:save.text})"> #{{$index+1}}: {{save.text}} ({{save.count}})</a>
+                            <a ui-sref="cross.results({query:save.text, page: 1})"> #{{$index+1}}: {{save.text}} ({{save.count}})</a>
                         </div>
                     </div>
                 </div>

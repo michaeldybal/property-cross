@@ -1,8 +1,15 @@
 <div>
-    <pagination ng-click="ctrl.clickPage()"
-            ng-model="ctrl.currentPage"
-            total-items="ctrl.countFlats"
-            max-size="ctrl.maxSize">
+    <pagination
+                ng-click="ctrl.clickPage()"
+                ng-model="ctrl.currentPage"
+                total-items="ctrl.countFlats"
+                items-per-page="20"
+                current-page="ctrl.currentPage"
+                max-size="ctrl.maxSize"
+                page="ctrl.currentPage"
+
+                boundary-links="true"
+                rotate="false">
     </pagination>
 </div>
 
@@ -11,7 +18,7 @@
     <div class="row">
         <h2>Search Results Page</h2>
         <div ng-if="ctrl.flats.listings.length>0">
-            <div class="row" ng-repeat="flat in ctrl.flats.listings">
+            <div class="row" ng-repeat="flat in ctrl.flats.listings" >
                 <div class="matches">
                     <div class="col-xs-2">
                         <div class="img-responsive" >
@@ -19,25 +26,25 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-10">
+                    <div class="col-xs-6">
                         <p><b>{{flat.price_formatted}}</b></p>
                         <p>{{flat.title}}</p>
                         <p>{{flat.summary}}</p>
-                        <a ui-sref="cross.details({id:flat.guid})">Подробнее..</a>
+                        <a ui-sref="cross.details({guid:flat.guid})">Подробнее..</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div ng-if="!ctrl.flats.listings">
-            <h3>Not found</h3>
+        <div ng-if="(ctrl.flats.listings==0)">
+            <h3>Not found flats</h3>
         </div>
 
         <div ng-if="ctrl.flats.locations.length>0">
-            <h3>Please, select a location below</h3>
-            <div class="row" ng-repeat="flat in ctrl.flats.locations">
+            <h4>Please, select a location below</h4>
+            <div class="row" ng-repeat="location in ctrl.flats.locations">
                 <div class="col-xs-10">
-                    <a ui-sref="cross.results({id:flat.place_name})">{{flat.long_title}}</a>
+                    <a ui-sref="cross.results({query:location.title, page:1})">{{location.long_title}}</a>
                 </div>
             </div>
         </div>

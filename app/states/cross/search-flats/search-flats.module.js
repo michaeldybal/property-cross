@@ -1,6 +1,8 @@
 'use strict';
 
-module.exports = angular.module('app.states.cross.search-flats', [])
+module.exports = angular.module('app.states.cross.search-flats', [
+    require('./quicksearch/quicksearch.module.js').name
+    ])
     .config(['$stateProvider', function($stateProvider){
         $stateProvider.state('cross.search-flats', {
             url: '/search-flats',

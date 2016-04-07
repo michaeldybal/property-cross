@@ -1,18 +1,20 @@
-module.exports = angular.module('app.states.cross.results', [])
+module.exports = angular.module('app.states.cross.results', [
+
+    ])
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
             .state('cross.results', {
-                url: '/results/{id:[0-9,a-z,-_—]+}',
+                url: '/results?query&page',
+                data: {
+                    route: {
+                        name: 'results',
+                        text: 'Search Results'
+                    }
+                },
                 views: {
                     'container@': {
                         template: require('./results.html'),
                         controller: 'ResultsController as ctrl'
-                    }
-                },
-                data: {
-                    route: {
-                        name: 'results',
-                        text: 'Read results'
                     }
                 },
                 resolve: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
